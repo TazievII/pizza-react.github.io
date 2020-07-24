@@ -10,7 +10,7 @@ function PizzaTypes({ items, onClick }) {
     <div className="categories">
       <ul>
         <li className={state === null ? 'active' : ''} onClick={() => selectItem(null)}>Все</li>
-        {items.map((item, index) => (
+        {items && items.map((item, index) => (
           <li 
           className={state === index ? 'active' : ''}
           onClick={() => selectItem(index)} 
