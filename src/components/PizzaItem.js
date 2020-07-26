@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes, { number } from 'prop-types';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 function PizzaItem({ name, imageUrl, price, types, sizes }) {
@@ -72,10 +72,18 @@ function PizzaItem({ name, imageUrl, price, types, sizes }) {
 
 PizzaItem.propTypes = {
   name: PropTypes.string.isRequired,
-  size: PropTypes.arrayOf(number).isRequired,
+  sizes: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
   price: PropTypes.number.isRequired,
-  types: PropTypes.arrayOf(number).isRequired,
+  types: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
   imageUrl: PropTypes.string.isRequired
 };
+
+PizzaItem.defaultProps = {
+  name: "---",
+  sizes: [],
+  price: 0,
+  types: [],
+  imageUrl: "---"
+}
 
 export default PizzaItem;

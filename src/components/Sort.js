@@ -3,12 +3,12 @@ import React from 'react';
 function Sort({ items }) {
   const [visibleSort, setVisibleSort] = React.useState(false);
   const [activeSort, setActiveSort] = React.useState(0);
-const actiteName = items[activeSort];
+  const actiteName = items[activeSort];
 
   const selectSort = (index) => {
     setActiveSort(index);
-    setVisibleSort(false)
-  }
+    setVisibleSort(false);
+  };
   const sortRef = React.useRef();
 
   const toggleVisibleSort = () => {
@@ -17,7 +17,7 @@ const actiteName = items[activeSort];
 
   const outsideSortClick = (e) => {
     if (!e.path.includes(sortRef.current)) {
-        setVisibleSort(false);
+      setVisibleSort(false);
     }
   };
 
@@ -26,12 +26,10 @@ const actiteName = items[activeSort];
   }, []);
 
   return (
-    <div
-      ref={sortRef}
-      className="sort">
+    <div ref={sortRef} className="sort">
       <div className="sort__label">
         <svg
-        className={visibleSort ? 'rotated' : ''}
+          className={visibleSort ? 'rotated' : ''}
           width="10"
           height="6"
           viewBox="0 0 10 6"
@@ -48,14 +46,15 @@ const actiteName = items[activeSort];
       {visibleSort && (
         <div className="sort__popup">
           <ul>
-          {items && items.map((item, index) => (
-          <li 
-          className={activeSort === index ? 'active' : ''}
-          onClick={() => selectSort(index)} 
-          key={`${item}_${index}`}>
-          {item}
-          </li>
-        ))}
+            {items &&
+              items.map((item, index) => (
+                <li
+                  className={activeSort === index ? 'active' : ''}
+                  onClick={() => selectSort(index)}
+                  key={`${item}_${index}`}>
+                  {item}
+                </li>
+              ))}
           </ul>
         </div>
       )}
