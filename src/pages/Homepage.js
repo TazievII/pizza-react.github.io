@@ -14,7 +14,7 @@ function Homepage({ items }) {
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
         {items.map((obj) => (
-          <PizzaItem key={obj.id} name={obj.name} />
+          <PizzaItem key={obj.id} {...obj} />
         ))}
       </div>
     </div>
