@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Sort({ items }) {
+const Sort = React.memo(({ items }) => {
   const [visibleSort, setVisibleSort] = React.useState(false);
   const [activeSort, setActiveSort] = React.useState(0);
   const actiteName = items[activeSort].name;
@@ -60,6 +60,6 @@ function Sort({ items }) {
       )}
     </div>
   );
-}
+});
 
 export default Sort;

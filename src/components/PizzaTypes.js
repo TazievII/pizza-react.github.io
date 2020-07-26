@@ -1,9 +1,10 @@
 import React from 'react';
 
-function PizzaTypes({ items, onClick }) {
+const PizzaTypes = React.memo(({ items, onClick }) => {
   const [state, setstate] = React.useState(null);
   const selectItem = (index) => {
     setstate(index);
+    onClick(index);
   }
 
   return (
@@ -21,6 +22,8 @@ function PizzaTypes({ items, onClick }) {
       </ul>
     </div>
   );
-}
+})
+
+
 
 export default PizzaTypes;
