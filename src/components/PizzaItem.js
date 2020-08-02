@@ -75,7 +75,7 @@ PizzaItem.propTypes = {
   sizes: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
   price: PropTypes.number.isRequired,
   types: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
-  imageUrl: PropTypes.string.isRequired
+  imageUrl: PropTypes.string.isRequired,
 };
 
 PizzaItem.defaultProps = {
@@ -83,7 +83,7 @@ PizzaItem.defaultProps = {
   sizes: [],
   price: 0,
   types: [],
-  imageUrl: "---"
+  imageUrl: "---",
 }
 
 export default PizzaItem;
