@@ -19,7 +19,7 @@ function Homepage() {
 
   React.useEffect(() => {
     if (!pizzas.length) {
-    dispatch(fetchPizzas());
+    dispatch(fetchPizzas(sortBy, category));
     }}, [category, sortBy]);
   const selectedCategory = React.useCallback((index) => {
     if (!pizzas.length) {
